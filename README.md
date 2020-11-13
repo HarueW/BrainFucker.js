@@ -5,17 +5,14 @@ A BrainFuck Language Interpreter can run on node.js by devepcoder
 ## Usage
 
 ```js
-'use strict';
+"use strict";
 
-var brainfuck   = require('./BrainFucker.js'),
-    source      = '>+++++++++[<++++++++>-]<.>+++++++[<++++>-]<+.+++++++..+++.[-]'
-                + '>++++++++[<++++>-]<.>+++++++++++[<++++++++>-]<-.--------.+++'
-                + '.------.--------.[-]>++++++++[<++++>-]<+.';
+let brainfucker = require("./BrainFucker.js");
 
-brainfuck.exec(source, function(err, output) {
-    if (err) { throw err };
+const src = ">+++++++++[<++++++++>-]<.>+++++++[<++++>-]<+.+++++++..+++.[-]>++++++++[<++++>-]<.>+++++++++++[<++++++++>-]<-.--------.+++.------.--------.[-]>++++++++[<++++>-]<+.";
 
-    console.log(output);
+brainfucker.exec(src, (e, o) => {
+    console.log(e || o);
 });
 ```
 
